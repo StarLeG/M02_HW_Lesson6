@@ -22,8 +22,6 @@ int main(int argc, char *argv[])
     while(true){
         int exit = menu(tasks);
         if(exit == 1) break;
-
-
     }
 
 

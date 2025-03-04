@@ -8,6 +8,7 @@ CONFIG += c++17 cmdline
 
 SOURCES += \
         inputDate.cpp \
+        inputPriority.cpp \
         main.cpp \
         menu.cpp
 
@@ -18,6 +19,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     inputDate.h \
+    inputPriority.h \
     main.h \
     menu.h
 

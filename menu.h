@@ -3,6 +3,7 @@
 
 #include "inputDate.h"
 #include "main.h"
+#include "inputPriority.h"
 
 
 enum Menu{

@@ -28,6 +28,8 @@ int menu(QVector<Task> tasks)
         qDebug() << "Введите дату выполнения (ДД.ММ.ГГГГ):";
         newTask.date = inputDate();
 
+        qDebug() << "Введите приоритет (1-3):";
+        newTask.priority = inputPriority();
 
 
         tasks.append(newTask);
