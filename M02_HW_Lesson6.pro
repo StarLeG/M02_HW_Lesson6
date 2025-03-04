@@ -10,7 +10,8 @@ SOURCES += \
         inputDate.cpp \
         inputPriority.cpp \
         main.cpp \
-        menu.cpp
+        menu.cpp \
+        printTasks.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -21,7 +22,8 @@ HEADERS += \
     inputDate.h \
     inputPriority.h \
     main.h \
-    menu.h
+    menu.h \
+    printTasks.h
 
 DISTFILES += \
     .gitignore

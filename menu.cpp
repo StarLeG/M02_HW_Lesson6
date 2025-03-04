@@ -2,7 +2,7 @@
 #include "qglobal.h"
 
 
-int menu(QVector<Task> tasks)
+int menu(QVector<Task> &tasks)
 {
     qDebug() << "\n\tМеню:";
     qDebug() << "______________________";
@@ -37,7 +37,7 @@ int menu(QVector<Task> tasks)
         break;
     }
     case Menu::ViewTasks:
-
+        printTasks(tasks);
         break;
     case Menu::DeleteTask:
 

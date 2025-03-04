@@ -4,6 +4,7 @@
 #include "inputDate.h"
 #include "main.h"
 #include "inputPriority.h"
+#include "printTasks.h"
 
 
 enum Menu{
@@ -15,7 +16,7 @@ enum Menu{
     LogOut
 };
 
-int menu(QVector<Task> tasks);
+int menu(QVector<Task> &tasks);
 
 
 #endif // MENU_H
