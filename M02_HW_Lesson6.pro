@@ -10,9 +10,11 @@ SOURCES += \
         editTask.cpp \
         inputDate.cpp \
         inputPriority.cpp \
+        loadTasksFromFile.cpp \
         main.cpp \
         menu.cpp \
         printTasks.cpp \
+        saveTasksToFile.cpp \
         searchTasks.cpp
 
 # Default rules for deployment.
@@ -24,9 +26,11 @@ HEADERS += \
     editTask.h \
     inputDate.h \
     inputPriority.h \
+    loadTasksFromFile.h \
     main.h \
     menu.h \
     printTasks.h \
+    saveTasksToFile.h \
     searchTasks.h
 
 DISTFILES += \

@@ -2,7 +2,7 @@
 #include "qglobal.h"
 
 
-int menu(QVector<Task> &tasks)
+int menu(QVector<Task> &tasks, const QString filename)
 {
     qDebug() << "\n\tМеню:";
     qDebug() << "______________________";
@@ -22,7 +22,6 @@ int menu(QVector<Task> &tasks)
     case Menu::AddTask:{ // Добавление задачи
         Task newTask;
         qDebug() << "Введите название задачи:";
-
         newTask.title = QTextStream(stdin).readLine().trimmed();
 
         qDebug() << "Введите дату выполнения (ДД.ММ.ГГГГ):";
@@ -86,6 +85,8 @@ int menu(QVector<Task> &tasks)
         break;
     }
     case Menu::LogOut:{  // Выход из программы
+        qDebug() << "Сохранение задач в файл...";
+        saveTasksToFile(tasks, filename);
         qDebug() << "Выход из программы.";
         return 1;
     }

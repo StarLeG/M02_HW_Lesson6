@@ -7,6 +7,7 @@
 #include "printTasks.h"
 #include "editTask.h"
 #include "searchTasks.h"
+#include "saveTasksToFile.h"
 
 
 enum Menu{
@@ -18,7 +19,7 @@ enum Menu{
     LogOut
 };
 
-int menu(QVector<Task> &tasks);
+int menu(QVector<Task> &tasks, const QString filename);
 
 
 #endif // MENU_H

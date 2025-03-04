@@ -12,6 +12,7 @@
 
 
 
+
 struct Task{
     QString title; // Название задачи
     QDate date; // Дата выполнения
