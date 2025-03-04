@@ -22,7 +22,7 @@ int menu(QVector<Task> &tasks)
     case Menu::AddTask:{ // Добавление задачи
         Task newTask;
         qDebug() << "Введите название задачи:";
-       // QTextStream(stdin).readLine();  // Очистка буфера
+
         newTask.title = QTextStream(stdin).readLine().trimmed();
 
         qDebug() << "Введите дату выполнения (ДД.ММ.ГГГГ):";
@@ -36,18 +36,55 @@ int menu(QVector<Task> &tasks)
         qDebug() << "Задача добавлена!";
         break;
     }
-    case Menu::ViewTasks:
+    case Menu::ViewTasks:{ // Просмотр задач
         printTasks(tasks);
         break;
-    case Menu::DeleteTask:
+    }
+    case Menu::DeleteTask:{ // Удаление задач
+        printTasks(tasks);
+        if (tasks.isEmpty()) {
+            break;
+        }
+
+        qDebug() << "Введите номер задачи для удаления:";
+        int index;
+        QTextStream(stdin) >> index;
+
+        if (index >= 1 && index <= tasks.size()) {
+            tasks.removeAt(index - 1);
+            qDebug() << "Задача удалена!";
+        } else {
+            qDebug() << "Неверный номер задачи!";
+        }
+        break;
+    }
+    case Menu::EditTask:{ // Редактирование задач
+        printTasks(tasks);
+        if (tasks.isEmpty()) {
+            break;
+        }
+
+        qDebug() << "Введите номер задачи для редактирования:";
+        int index;
+        QTextStream(stdin) >> index;
+
+        if (index >= 1 && index <= tasks.size()) {
+            editTask(tasks[index - 1]);
+            qDebug() << "Задача обновлена!";
+        } else {
+            qDebug() << "Неверный номер задачи!";
+        }
 
         break;
-    case Menu::EditTask:
+    }
+    case Menu::SearchTasks: { // Поиск задач
+        qDebug() << "Введите ключевое слово для поиска:";
+        QTextStream(stdin).readLine();  // Очистка буфера
+        QString keyword = QTextStream(stdin).readLine().trimmed();
 
+        searchTasks(tasks, keyword);
         break;
-    case Menu::SearchTasks:
-
-        break;
+    }
     case Menu::LogOut:{  // Выход из программы
         qDebug() << "Выход из программы.";
         return 1;

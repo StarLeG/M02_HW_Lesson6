@@ -5,6 +5,8 @@
 #include "main.h"
 #include "inputPriority.h"
 #include "printTasks.h"
+#include "editTask.h"
+#include "searchTasks.h"
 
 
 enum Menu{
