@@ -16,12 +16,6 @@ void editTask(Task &task) {
         task.date = QDate::fromString(dateStr, "dd.MM.yyyy");
     }
 
-    /*qDebug() << "Текущий приоритет (" << task.priority << "). Новый приоритет (Enter - оставить):";
-    QString priorityStr = QTextStream(stdin).readLine().trimmed();
-    if (!priorityStr.isEmpty()) {
-        task.priority = inputPriority();
-    }*/
-
     qDebug() << "Текущий приоритет (" << task.priority << "). Новый приоритет (Enter - оставить):";
     QString priorityStr = stream.readLine().trimmed();
     if (!priorityStr.isEmpty()) {
@@ -33,7 +27,7 @@ void editTask(Task &task) {
                 break;
             }
             qDebug() << "Приоритет должен быть 1-3. Попробуйте снова:";
-            priorityStr = stream.readLine().trimmed();  // Повторный ввод
+            priorityStr = stream.readLine().trimmed();
         }
     }
 }
