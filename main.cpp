@@ -11,6 +11,8 @@ int main(int argc, char *argv[])
     const QString filename = "tasks.dat";
     loadTasksFromFile(tasks, filename);
 
+
+
     while(true){
         int exit = menu(tasks, filename);
         if(exit == 1) break;

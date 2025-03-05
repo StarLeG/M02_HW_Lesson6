@@ -2,6 +2,7 @@
 #include "qglobal.h"
 
 
+
 int menu(QVector<Task> &tasks, const QString filename)
 {
     qDebug() << "\n\tМеню:";
@@ -15,8 +16,18 @@ int menu(QVector<Task> &tasks, const QString filename)
     qDebug() << "______________________";
     qDebug() << "Выберите действие:";
 
-    int choice;
-    QTextStream(stdin) >> choice;
+
+    QTextStream stream(stdin);
+    QString choiceStr;
+    stream >> choiceStr;
+    bool ok;
+    int choice = choiceStr.toInt(&ok);
+
+    if (!ok || choice < 1 || choice > 6) {
+        qDebug() << "Неверный ввод. Пожалуйста, введите число от 1 до 6.";
+        stream.readLine();  // Очистка буфера
+
+    }
 
     switch (choice) {
     case Menu::AddTask:{ // Добавление задачи
@@ -90,9 +101,10 @@ int menu(QVector<Task> &tasks, const QString filename)
         qDebug() << "Выход из программы.";
         return 1;
     }
-    default:
+    default:{
         qDebug() << "Неверный выбор. Попробуйте снова.";
         break;
+    }
     }
     return 0;
 }

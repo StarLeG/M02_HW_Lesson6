@@ -10,6 +10,7 @@
 #include "saveTasksToFile.h"
 
 
+
 enum Menu{
     AddTask = 1,
     ViewTasks,
@@ -18,6 +19,7 @@ enum Menu{
     SearchTasks,
     LogOut
 };
+
 
 int menu(QVector<Task> &tasks, const QString filename);
 
