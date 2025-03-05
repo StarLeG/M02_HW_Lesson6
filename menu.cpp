@@ -25,7 +25,7 @@ int menu(QVector<Task> &tasks, const QString filename)
 
     if (!ok || choice < 1 || choice > 6) {
         qDebug() << "Неверный ввод. Пожалуйста, введите число от 1 до 6.";
-        stream.readLine();  // Очистка буфера
+        stream.readLine();
 
     }
 
